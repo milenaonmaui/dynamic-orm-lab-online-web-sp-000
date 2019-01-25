@@ -49,7 +49,7 @@ def self.table_name
   end
 
   def self.find_by(attr_hash)
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attr_hash.keys[0]} = #{attr_hash.values[0]"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attr_hash.keys[0]} = #{attr_hash.values[0]}"
     DB[:conn].execute(sql)
   end
 
