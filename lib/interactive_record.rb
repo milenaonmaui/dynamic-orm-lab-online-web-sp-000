@@ -48,8 +48,8 @@ def self.table_name
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
-  def self.find_by_name(name)
-    sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
+  def self.find_by(attr_hash)
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attr_hash.keys[0]} = #{attr_hash.values[0]"
     DB[:conn].execute(sql)
   end
 
