@@ -50,6 +50,7 @@ def self.table_name
 
   def self.find_by(attr_hash)
     sql = "SELECT * FROM #{self.table_name} WHERE #{attr_hash.keys[0]} = #{attr_hash.values[0]}"
+   binding.pry
     DB[:conn].execute(sql)
   end
 
